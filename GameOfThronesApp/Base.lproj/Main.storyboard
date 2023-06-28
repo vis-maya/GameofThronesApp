@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gfP-u6-c66">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Game of Thrones-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GameOfThronesApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="scR-Tn-PhC">
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <subviews>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="GeE-Ic-ZxW">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="95"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="95" id="4aw-4a-PRR"/>
+                                        </constraints>
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yke-ss-tad">
+                                            <size key="itemSize" width="100" height="100"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collCell" id="OK8-Cf-Iyb" customClass="CollectionViewCell" customModule="GameOfThronesApp" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="-2.6666666666666665" width="100" height="100"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="aNH-Ag-n8d">
+                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m42-PN-AVv">
+                                                            <rect key="frame" x="5" y="5" width="90" height="90"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <state key="normal" title="Button"/>
+                                                            <buttonConfiguration key="configuration" style="filled" title="1" cornerStyle="capsule">
+                                                                <fontDescription key="titleFontDescription" type="system" pointSize="26"/>
+                                                            </buttonConfiguration>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                    <real key="value" value="45"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                            <connections>
+                                                                <action selector="didSelectBtn:" destination="OK8-Cf-Iyb" eventType="touchUpInside" id="hOv-gD-IDo"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                </collectionViewCellContentView>
+                                                <size key="customSize" width="100" height="100"/>
+                                                <connections>
+                                                    <outlet property="seasonNo" destination="m42-PN-AVv" id="r3y-3U-Qdf"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                        </cells>
+                                        <connections>
+                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="Sad-Uh-hQb"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="JnM-Rz-aF3"/>
+                                        </connections>
+                                    </collectionView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Season 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WyU-zx-S2C" customClass="CustomLabel" customModule="GameOfThronesApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="95" width="393" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="2h5-db-CHU"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderBottomWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ncS-f4-CMM">
+                                        <rect key="frame" x="0.0" y="145" width="393" height="570"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell1" rowHeight="311" id="yfO-W8-M82" customClass="TableViewCell" customModule="GameOfThronesApp" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="50" width="393" height="311"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yfO-W8-M82" id="lvo-af-nCv">
+                                                    <rect key="frame" x="0.0" y="0.0" width="393" height="311"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="aVg-3r-28W">
+                                                            <rect key="frame" x="10" y="0.0" width="363" height="311"/>
+                                                            <subviews>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="QmY-1j-0ra">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="363" height="50"/>
+                                                                    <subviews>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="08 - ABC" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fqZ-Kv-ktz">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="363" height="25"/>
+                                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                                            <nil key="textColor"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Airdate: 19 May 2022" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8xa-Rl-6tq">
+                                                                            <rect key="frame" x="0.0" y="25" width="363" height="25"/>
+                                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                                            <nil key="textColor"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                    </subviews>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="50" id="Z6W-3y-7cl"/>
+                                                                    </constraints>
+                                                                </stackView>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XsI-CQ-Hcu">
+                                                                    <rect key="frame" x="0.0" y="55" width="363" height="230"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="230" id="3aT-LR-51B"/>
+                                                                    </constraints>
+                                                                </imageView>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PIg-Zq-qiD">
+                                                                    <rect key="frame" x="0.0" y="290" width="363" height="21"/>
+                                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="aVg-3r-28W" firstAttribute="top" secondItem="lvo-af-nCv" secondAttribute="top" id="aem-2a-qTz"/>
+                                                        <constraint firstItem="aVg-3r-28W" firstAttribute="leading" secondItem="lvo-af-nCv" secondAttribute="leading" constant="10" id="cIj-mX-dcw"/>
+                                                        <constraint firstAttribute="trailing" secondItem="aVg-3r-28W" secondAttribute="trailing" constant="20" id="muy-ic-Pyg"/>
+                                                        <constraint firstAttribute="bottom" secondItem="aVg-3r-28W" secondAttribute="bottom" id="u1V-ah-oYC"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="airDate" destination="8xa-Rl-6tq" id="4X4-S9-rzz"/>
+                                                    <outlet property="img" destination="XsI-CQ-Hcu" id="D9j-JF-Wyf"/>
+                                                    <outlet property="summary" destination="PIg-Zq-qiD" id="9eo-rS-QsZ"/>
+                                                    <outlet property="title" destination="fqZ-Kv-ktz" id="4hm-kY-1N5"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="PZg-fV-gUo"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="NF6-C2-YiY"/>
+                                        </connections>
+                                    </tableView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="ncS-f4-CMM" firstAttribute="leading" secondItem="scR-Tn-PhC" secondAttribute="leading" id="G1Y-M6-HYb"/>
+                                    <constraint firstAttribute="trailing" secondItem="ncS-f4-CMM" secondAttribute="trailing" id="GLY-5I-wcD"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="scR-Tn-PhC" secondAttribute="bottom" id="2XV-5I-35e"/>
+                            <constraint firstItem="scR-Tn-PhC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="2qy-rL-6UI"/>
+                            <constraint firstItem="scR-Tn-PhC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="IQy-z4-ZUn"/>
+                            <constraint firstItem="scR-Tn-PhC" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="JUZ-Ix-hAX"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Game of Thrones" id="fgJ-Xx-Eme"/>
+                    <connections>
+                        <outlet property="collectionView" destination="GeE-Ic-ZxW" id="AlR-LQ-oCK"/>
+                        <outlet property="seasonTitle" destination="WyU-zx-S2C" id="TFj-uu-KDI"/>
+                        <outlet property="tableView" destination="ncS-f4-CMM" id="3sM-JD-xq0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1011.4503816793892" y="3.5211267605633805"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="38T-Tq-ccj">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gfP-u6-c66" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" backIndicatorImage="chevron.backward.circle" catalog="system" id="Nxz-Fn-AuM">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="NW2-ah-QYs"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n7l-Hp-YBa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="84.732824427480907" y="3.5211267605633805"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="chevron.backward.circle" catalog="system" width="128" height="123"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
